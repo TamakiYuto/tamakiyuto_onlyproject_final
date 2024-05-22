@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>私のスプリングブートアプリ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+        .search-form {
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 14px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 14px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" th:action="@{/search}" method="get" class="search-form">
+        <input type="text" name="keyword" placeholder="検索...">
+        <button type="submit">検索</button>
+    </form>
+	
+
+    <h2>すべてのリスト</h2>
+    <table>
+        <thead>
+            <tr>
+				<th>名前</th>
+				<th>年齢</th>
+				<th>お城</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="ryouma : ${person}">
+                <td th:text="${ryouma.name}"></td>
+				<td th:text="${ryouma.age}"></td>
+				<td th:text="${ryouma.address}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <h2>検索結果</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>名前</th>
+				<th>年齢</th>
+				<th>お城</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="gomi:${pChoice}">
+				<td th:text="${gomi.name}"></td>
+				<td th:text="${gomi.age}"></td>
+				<td th:text="${gomi.address}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

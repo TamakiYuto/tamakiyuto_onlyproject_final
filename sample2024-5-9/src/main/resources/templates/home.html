@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang = "ja">
+	
+	<head>
+		<meta charset="utf-8">
+		<title>私のスプリングブートアプリ</title>
+	</head>
+	
+	
+		<h1 th:text="${greeting}"></h1>
+		
+		<div th.object="${person}">
+			<h1 th:text="'名前は' + *{name} + 'です'"></h1>
+			<h1 th:text="'年齢は' + *{age} + '才です'"></h1>
+		</div>
+		
+		<a　th:href="@{/school}">スクールページへのリンク</a>
+		
+		<img th:src="@{dog_spring.jpg}">
+		
+	</body>
+</html>

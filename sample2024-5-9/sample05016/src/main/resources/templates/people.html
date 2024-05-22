@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Person List</title>
+	<link th:href="@{/css/content.css}" rel="stylesheet">
+	
+</head>
+<body>
+	<form method="get" th:action="@{/people/search}">
+		<input type="text" id="keyword" name="keyword" size="10" />
+		<input type="submit" value="お名前検索" />
+		<a th:href="@{/people}">戻る</a>
+	</form>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+			<!-- データを反映 -->
+			<tr th:each="person : ${people}">
+			    <td th:text="${person.name}">Name</td>
+			    <td th:text="${person.age}">Age</td>
+			    <td th:text="${person.address}">Address</td>
+			</tr>
+        </tbody>
+    </table>
+</body>
+</html>

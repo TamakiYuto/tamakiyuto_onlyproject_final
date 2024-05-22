@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link th:href="@{/css/style.css}" rel="stylesheet">
+    <title>最初のスプリング講義</title>
+</head>
+<body>
+    <header>
+        <h1 th:text="${greeting}"></h1>
+        <h2 th:text="${today}"></h2>
+        <h3>Welcome to First Spring App</h3>
+    </header>
+
+    <main>
+        <p th:text="${msg}"></p>
+        <a th:href="@{/test}">テスト</a>
+        
+        <div class="image-container">
+            <img th:src="@{/spring_image01.jpg}" alt="spring image 1">
+            <img th:src="@{/spring_image02.jpg}" alt="spring image 2">
+            <img th:src="@{/spring_image03.jpg}" alt="spring image 3">
+        </div>
+
+        <div class="person-info">
+            <h1>ウィリアムズ・シェイクスピア</h1>
+            <h2></h2>
+        </div>
+    </main>
+</body>
+</html>
